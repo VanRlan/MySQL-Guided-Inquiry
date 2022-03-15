@@ -46,7 +46,7 @@ movieid INT NOT NULL AUTO_INCREMENT,
 title VARCHAR(50),
 release_date INT,
 rating ENUM('G', 'PG', 'PG-13', 'R'),
-PRIMARY KEY(movie_id)
+PRIMARY KEY (movieid)
 );
 
 INSERT INTO fav_movies (title, release_date, rating) VALUES
@@ -59,7 +59,7 @@ INSERT INTO fav_movies (title, release_date, rating) VALUES
 ('DRAGON BALL SUPER BROLY', 2018, 'PG-13'),
 ('TRAIN TO BUSAN', 2016, 'R'),
 ('THE MAZE RUNNER', 2014, 'R'),
-('BBORUTO', 2015, 'PG-13');
+('BORUTO', 2015, 'PG-13');
 
 SELECT * FROM fav_movies WHERE title LIKE 's%';
 
@@ -68,7 +68,7 @@ ALTER TABLE fav_movies ADD director_firstname VARCHAR(50);
 ALTER TABLE fav_movies ADD director_lastname VARCHAR(50);
 
 UPDATE fav_movies SET director_firstname = 'Van', 
-director_lastname= 'Rlan' WHERE movie_id >= 1 ;
+director_lastname = 'Rlan' WHERE movieid >= 5 ;
 
 SELECT director_firstname, director_lastname, 
 CONCAT (director_firstname,' ', director_lastname) AS director
@@ -106,9 +106,10 @@ UPDATE fav_cars2
 SET color = 'yellow', price = '22000'
 WHERE id = 7;
 
-ALTER TABLE cars ADD COLUMN car_name VARCHAR(50);
+ALTER TABLE fav_cars ADD COLUMN car_name VARCHAR(50);
 
-UPDATE cars SET car_name = CONCAT(make, ' ', model);
+UPDATE fav_cars SET car_name = CONCAT(make, ' ', model );
+
 ALTER TABLE fav_cars2 ADD COLUMN result INT;
 
 select * FROM fav_cars2;
