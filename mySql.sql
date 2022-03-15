@@ -108,7 +108,7 @@ WHERE id = 7;
 
 ALTER TABLE cars ADD COLUMN car_name VARCHAR(50);
 
-UPDATE cars SET car_name = CONCAT(make, ' ', model )
+UPDATE cars SET car_name = CONCAT(make, ' ', model);
 ALTER TABLE fav_cars2 ADD COLUMN result INT;
 
 select * FROM fav_cars2;
